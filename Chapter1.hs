@@ -139,3 +139,36 @@ main = do
     print (getFirstN 16)
 
     Output: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16]
+
+-- Define a function addNumbers that takes two integers and returns their sum.
+addNumbers x y = x + y
+
+main :: IO()
+
+main = do
+    
+    print (addNumbers 6 3)
+
+    Output: 9
+
+-- Write a function fToC that converts Fahrenheit to Celsius.
+fToC x = (x -10 ) * 4 / 6
+
+main :: IO()
+
+main = do
+    
+    print (fToC 40)
+
+    Output: 20.0
+
+-- Create a function applyTwice that applies a function twice to an input value.
+applyTwice x = x^2 
+
+main :: IO()
+
+main = do
+    
+    print (applyTwice 6)
+
+    Output: 36
