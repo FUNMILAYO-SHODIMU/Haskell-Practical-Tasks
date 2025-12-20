@@ -144,3 +144,102 @@ main = do
 
 -- Output: False
 
+-- Task 5i: Write a function circleArea
+circleArea :: Float -> Float 
+circleArea r = pi * r^2
+
+main :: IO ()
+main = do
+ let r = 2.5
+ let area = circleArea r
+ print $ "The area of circle is" ++ " " ++ show area
+
+Output: "The area of circle is 19.634954"
+
+-- Task 5ii: Write a function maxOfThree
+maxOfThree :: Int -> Int -> Int -> Int
+maxOfThree a b c = a `max` b `max` c
+
+main :: IO ()
+main = do
+ print $ maxOfThree 12 3 27
+
+-- Output: 27
+
+-- Task 6ii: Define an Integer variable smallNumber with the value 2^62
+smallNumber :: Int
+smallNumber = 2 ^ 62
+
+main :: IO ()
+main = do
+    print $ smallNumber
+
+-- Output: 4611686018427387904
+
+-- Task 6ii: Define an Integer variable bigNumber with the value 2^127.
+bigNumber :: Integer
+bigNumber = 2 ^ 127
+
+main :: IO ()
+main = do
+    print $ bigNumber
+
+ -- Output: 170141183460469231731687303715884105728
+
+ -- Task 6iii: Try to evaluate 2^64 :: Int in GHCi and note the result.
+evaluate :: Int
+evaluate = 2 ^ 64
+
+main :: IO ()
+main = do
+    print $ evaluate
+
+-- Output: 0
+
+ -- Task 7i: Write Boolean expressions that evaluate to:
+-- True using &&
+evaluate :: Bool -> Bool
+evaluate a =  True && True
+
+main :: IO ()
+main = do
+ print $ evaluate (6 > 5) && (4 == 4)
+
+-- Output: True
+
+-- Task 7ii: Write Boolean expressions that evaluate to:
+-- False using ||
+evaluate :: Bool -> Bool
+evaluate a =  False || False
+
+main :: IO ()
+main = do
+ print $ evaluate (6 > 9 ) || ( 7 == 6)
+
+-- Output: False
+
+-- Task 7iii: Write Boolean expressions that evaluate to:
+-- True using not
+evaluate :: Bool 
+evaluate =  not (8 < 3)
+
+main :: IO ()
+main = do
+ print $ evaluate
+
+-- Output: True
+
+-- Task 7: Write Boolean expressions that evaluate to:
+-- A comparison that returns False
+lessThan13 :: Int -> Bool
+lessThan13 a = a < 13
+
+main :: IO ()
+main = do
+ print $ lessThan13 25 
+
+-- Output: False
+
+
+
+
