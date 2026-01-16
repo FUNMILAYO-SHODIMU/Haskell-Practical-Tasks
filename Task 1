@@ -1,9 +1,1 @@
--- Multiple a number by 2 using double 
-double :: Int -> Int
-double x = x * 2
 
-main :: IO ()
-main = do
- print $ double 5
-
--- Output : 10
