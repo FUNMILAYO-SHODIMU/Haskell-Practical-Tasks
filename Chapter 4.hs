@@ -118,3 +118,17 @@ main = do
  print $ (firstAndThird [2, 3, 4, 7])
 
 -- Output: (2,4)
+
+-- Task 8: Extract Values from Tuples
+describeTuple ::(Int, Int, Int) -> String
+describeTuple (a, b, c) = "The three elements give " ++ show a ++ show b ++ show c
+describeTuple _ = "Invalid"
+
+main :: IO ()
+main = do
+ print (describeTuple (3, 5, 7))
+ putStrLn (describeTuple (2, 0, 6))
+
+ -- Output:
+"The three elements give 357"
+The three elements give 206
