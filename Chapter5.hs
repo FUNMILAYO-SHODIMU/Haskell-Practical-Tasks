@@ -31,3 +31,16 @@ main = do
  print $ map upperCaseLetter ["ade", "Bola", "Dayo", "fade", "Dennis"]
 
 -- Output: [False,True,True,False,True]
+
+-- HC5T4: Using Lambda Functions
+biggerThan10 :: [Int] -> Bool
+biggerThan10 x = any (\x -> x > 10) x
+
+main :: IO ()
+main = do
+ print $ biggerThan10 [1..15]
+ print $ biggerThan10 [1..10]
+
+-- Output:
+True
+False
