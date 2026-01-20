@@ -44,3 +44,13 @@ main = do
 -- Output:
 True
 False
+
+-- HC5T5: Partial Application
+multiplyByFive :: Int -> Int
+multiplyByFive = (* 5) 
+
+main :: IO ()
+main = do
+ print $ multiplyByFive 7
+
+-- Output: 35
