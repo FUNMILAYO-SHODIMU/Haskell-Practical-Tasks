@@ -54,3 +54,59 @@ main = do
  print $ multiplyByFive 7
 
 -- Output: 35
+
+-- HC5T6: Function Composition 
+squareEvenNumbers :: [Int] -> [Int]
+squareEvenNumbers = filter even . map (^ 2) 
+
+main :: IO ()
+main = do
+ print $ squareEvenNumbers [1..15]
+
+-- Output : [4,16,36,64,100,144,196]
+
+-- HC5T7: The $ Operator
+result :: [Int] -> Int
+result x = sum $ map (*2) $ filter (>3) $ x
+
+main :: IO ()
+main = do
+ print $ result [1..10]
+
+-- Output : 98
+
+-- HC5T8: Point-Free Style
+addFive :: Int -> Int
+addFive = (+ 5)
+
+main :: IO ()
+main = do
+ print $ addFive 8
+
+-- Output: 13
+
+-- HC5T9: Higher-Order Function to Transform a List
+transformList :: (Int -> Int) -> [Int] -> [Int]
+transformList f xs = map (applyTwice f) xs
+
+applyTwice :: (y -> y) -> y -> y
+applyTwice f xs = f (f xs)
+
+main :: IO ()
+main = do
+ print $ transformList (*2) [1..4]
+
+-- Output: [4,8,12,16]
+
+-- HC5T10: Combining Higher-Order Functions
+hasSquareGreaterThan50 :: [Int] -> Bool
+hasSquareGreaterThan50 xs = any (>50) (map (^2) (filter (/= 0)  xs))
+
+main :: IO ()
+main = do
+ print $ hasSquareGreaterThan50 [7..10]
+ print $ hasSquareGreaterThan50 [2..6]
+
+ -- Output:
+True
+False
