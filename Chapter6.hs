@@ -20,3 +20,23 @@ main = do
  print $ fibonacci 6
 
 -- Output: 8
+
+-- HC6T3: Sum of Elements Using foldr
+sumList :: [Int] -> Int
+sumList = foldr (+) 0
+
+main :: IO ()
+main = do
+ print $ sumList [2..8]
+
+-- Output: 35
+
+-- HC6T4: Product of Elements Using foldl
+productList :: [Int] -> Int
+productList = foldr (*) 1
+
+main :: IO ()
+main = do
+ print $ productList [2..6]
+
+-- Output: 720
