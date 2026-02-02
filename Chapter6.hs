@@ -40,3 +40,30 @@ main = do
  print $ productList [2..6]
 
 -- Output: 720
+
+-- HC6T5: Reverse a List (Recursive)
+reverse' :: [a] -> [a]
+reverse' [] = []
+reverse' (x:xs) = reverse' xs ++ [x]
+
+main :: IO ()
+main = do
+ print $ reverse' [1,2,3,4,5]
+
+-- Output: [5,4,3,2,1]
+
+--HC6T6: Element Exists in List
+elementExists :: Eq a => a -> [a] -> Bool
+elementExists _ [] = False
+elementExists x (y:ys)
+ | x == y = True
+ | otherwise = elementExists x ys
+
+main :: IO ()
+main = do
+ print $ elementExists 3 [1,2,3,4,5]
+ print $ elementExists 7 [10..15]
+
+-- Output: 
+True
+False
