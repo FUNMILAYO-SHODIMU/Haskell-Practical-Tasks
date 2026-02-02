@@ -67,3 +67,62 @@ main = do
 -- Output: 
 True
 False
+
+-- HC6T7: List Length
+length' :: [a] -> Int
+length' [] = 0
+length' (_:xs) = 1 + length xs
+
+main :: IO ()
+main = do
+ print $ length' [1..12]
+ print $ length' []
+
+-- Output
+12
+0
+
+-- HC6T8: Filter Even Numbers
+filterEven :: [Int] -> [Int]
+filterEven [] = []
+filterEven (x:xs)
+ | even x = x :filterEven xs
+ | otherwise = filterEven xs
+
+
+main :: IO ()
+main = do
+ print $ filterEven [1..14]
+ print $ filterEven []
+
+-- Output: 
+[2,4,6,8,10,12,14]
+[]
+
+-- HC6T9: Map Implementation
+mapList :: (a -> b) -> [a] -> [b]
+mapList _ [] = []
+mapList f (x:xs) = f x : mapList f xs
+
+
+main :: IO ()
+main = do
+ print $ mapList (*2) [2,4,6,8]
+ print $ mapList (+1) [1,3,5,7]
+
+-- Output: 
+[4,8,12,16]
+[2,4,6,8]
+
+-- HC6T10: Implement a recursive function that takes a number and returns a list of its digits.
+digits :: Int -> [Int]
+digits n
+ | n < 0 = []
+ | n < 10 = [n]
+ | otherwise = digits (n `div` 10) ++ [n `mod` 10]
+
+main :: IO ()
+main = do
+ print $ digits 2468
+
+-- Output: [2,4,6,8]
